@@ -8,22 +8,36 @@ const {
 ---
 <section class="hero">
   <div class="container">
-    <div class="hero-eyebrow">Tulsa's Termite Education Resource</div>
-    <h1 set:html={h1} />
-    <p class="sub">{sub}</p>
-    <div class="hero-cta">
-      <a href={primaryCta.href} class="btn btn-primary btn-lg" data-event="cta_click" data-lead-type="request_inspection">{primaryCta.label}</a>
-      <a href={secondaryCta.href} class="btn btn-ghost btn-lg" data-event="cta_click" data-lead-type="warning_signs">{secondaryCta.label}</a>
+    <div class="hero-split">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Tulsa's Termite Education Resource</div>
+        <h1 set:html={h1} />
+        <p class="sub">{sub}</p>
+        <div class="hero-cta">
+          <a href={primaryCta.href} class="btn btn-primary btn-lg" data-event="cta_click" data-lead-type="request_inspection">{primaryCta.label}</a>
+          <a href={secondaryCta.href} class="btn btn-ghost" data-event="cta_click" data-lead-type="warning_signs">{secondaryCta.label}</a>
+        </div>
+        <div class="hero-call">
+          Prefer to talk? <!-- TODO: Replace with final business / call-tracking number -->
+          <a href="tel:+19185550199" data-event="call_click" data-lead-type="phone">Call (918) 555-0199</a>
+        </div>
+        <div class="trust-row">
+          <div class="trust"><strong>🌿 Local Focus</strong>Tulsa metro homeowners only</div>
+          <div class="trust"><strong>💬 No Scare Tactics</strong>Plain-English answers</div>
+          <div class="trust"><strong>⚡ Fast Follow-up</strong>We respond to every request</div>
+        </div>
+        <p class="hero-areas">Serving Tulsa, Broken Arrow, Jenks, Bixby, Owasso, Sand Springs, Sapulpa, Glenpool, Claremore, and Catoosa.</p>
+      </div>
+      <div class="hero-image-wrap">
+        <img
+          src="/images/hero-home.jpg"
+          alt="Suburban home in the Tulsa metro area — Smart Termite Tulsa serves homeowners across the region"
+          class="hero-img"
+          width="680"
+          height="500"
+          loading="eager"
+        />
+      </div>
     </div>
-    <div class="hero-call">
-      Prefer to talk? <!-- TODO: Replace with final business / call-tracking number --><a href="tel:+19185550199" data-event="call_click" data-lead-type="phone">Call (918) 555-0199</a>
-    </div>
-    <div class="trust-row">
-      <div class="trust"><strong>🌿 Local Focus</strong>Tulsa metro homeowners only</div>
-      <div class="trust"><strong>💬 Plain-English Answers</strong>No pressure, no scare tactics</div>
-      <div class="trust"><strong>📚 Education First</strong>Understand before you decide</div>
-      <div class="trust"><strong>⚡ Fast Follow-up</strong>We respond to every request</div>
-    </div>
-    <p class="hero-areas">Serving Tulsa, Broken Arrow, Jenks, Bixby, Owasso, Sand Springs, Sapulpa, Glenpool, Claremore, and Catoosa.</p>
   </div>
 </section>
