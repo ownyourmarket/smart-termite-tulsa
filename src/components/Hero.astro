@@ -1,0 +1,28 @@
+---
+const {
+  h1 = 'Worried About Termites in Your Tulsa Home?',
+  sub = "Spot warning signs early, understand your options, and request a professional termite inspection across the Tulsa metro — without the pressure or the scare tactics.",
+  primaryCta = { href: '/contact', label: 'Request Inspection' },
+  secondaryCta = { href: '/tulsa-termite-warning-signs', label: 'Learn Warning Signs' },
+} = Astro.props;
+---
+<section class="hero">
+  <div class="container">
+    <h1>{h1}</h1>
+    <p class="sub">{sub}</p>
+    <div class="hero-cta">
+      <a href={primaryCta.href} class="btn btn-primary" data-event="cta_click" data-lead-type="request_inspection">{primaryCta.label}</a>
+      <a href={secondaryCta.href} class="btn btn-secondary" data-event="cta_click" data-lead-type="warning_signs">{secondaryCta.label}</a>
+    </div>
+    <div class="hero-call">
+      Prefer to talk? <!-- TODO: Replace with final business / call-tracking number --><a href="tel:+19185550199" data-event="call_click" data-lead-type="phone">Call (918) 555-0199</a>
+    </div>
+    <div class="trust-row">
+      <div class="trust"><strong>Local focus</strong>Tulsa metro homeowners only</div>
+      <div class="trust"><strong>Plain-English answers</strong>No pressure, no scare tactics</div>
+      <div class="trust"><strong>Education-first</strong>Understand before you decide</div>
+      <div class="trust"><strong>Fast follow-up</strong>We respond to every request</div>
+    </div>
+    <p class="hero-areas">Serving Tulsa, Broken Arrow, Jenks, Bixby, Owasso, Sand Springs, Sapulpa, Glenpool, Claremore, and Catoosa.</p>
+  </div>
+</section>

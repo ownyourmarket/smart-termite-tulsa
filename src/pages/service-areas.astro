@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+import CTA from '../components/CTA.astro';
+import Schema from '../components/Schema.astro';
+
+const areas = [
+  { name: 'Tulsa', body: "Tulsa proper covers a wide range of home types — from 1920s craftsman bungalows in Brookside and Maple Ridge to mid-century ranches in midtown and newer builds in south Tulsa. Older neighborhoods with pier-and-beam foundations and mature trees see persistent subterranean termite pressure, and slab homes in newer areas are not immune. Annual inspections are the single biggest predictor of whether a Tulsa home avoids serious termite damage." },
+  { name: 'Broken Arrow', body: "Broken Arrow has grown faster than almost any other Tulsa suburb, and that mix of decades-old housing stock alongside brand-new subdivisions means termite risk varies block by block. Newer slab homes can still develop entry points through utility penetrations and settling cracks. Older Broken Arrow homes near the historic core deserve close attention to wood-to-soil contact." },
+  { name: 'Jenks', body: "Jenks sits along the Arkansas River, and riverside soils plus heavy lawn irrigation often produce the consistently moist conditions that subterranean termites prefer. Homes near the riverfront and in the older parts of downtown Jenks benefit from extra attention to crawlspace moisture and foundation drainage." },
+  { name: 'Bixby', body: "Bixby's riverfront properties, established trees, and lush landscaping create some of the highest-moisture conditions in the metro. Combined with rapid new construction, Bixby homeowners should consider termite inspections a routine part of homeownership rather than a reactive step." },
+  { name: 'Owasso', body: "Owasso is dominated by newer construction, which sometimes gives homeowners a false sense of security. Termites do not care how new your home is — they care about moisture, soil contact, and entry points. Settling, landscaping, and irrigation lines can all create vulnerabilities within the first 5 to 10 years." },
+  { name: 'Sand Springs', body: "Sand Springs has a strong stock of older bungalows and pier-and-beam homes, many with crawlspaces that stay slightly damp year-round. These conditions reward annual professional inspections, especially in the historic neighborhoods near downtown." },
+  { name: 'Sapulpa', body: "Sapulpa's historic homes, shaded lots, and older outbuildings are exactly the conditions termites are built to exploit. Wood storage, untreated fences, and aging foundations all warrant a careful look during annual inspections." },
+  { name: 'Glenpool', body: "Glenpool's growing residential footprint sits on clay-heavy soils that shift seasonally, opening hairline foundation cracks. New construction here benefits significantly from pre-treatment, and existing homes should be inspected annually." },
+  { name: 'Claremore', body: "Claremore homes — especially those on rural-edge lots with wood storage, outbuildings, or wooden fences — see steady termite pressure. Annual inspections are particularly important if firewood is stored on the property or wood structures touch the soil." },
+  { name: 'Catoosa', body: "Catoosa's mixed housing ages and varied drainage conditions mean termite risk is best evaluated on a property-by-property basis. Homes with mature trees, sprinkler systems, or older crawlspaces should plan on an inspection at least once per year." },
+];
+---
+<BaseLayout
+  title="Tulsa-Metro Termite Service Areas | Smart Termite Tulsa"
+  description="Termite inspection requests across Tulsa, Broken Arrow, Jenks, Bixby, Owasso, Sand Springs, Sapulpa, Glenpool, Claremore, and Catoosa."
+>
+  <Schema type="Service" serviceName="Termite Inspection" name="Tulsa-Metro Service Areas" description="Termite inspection requests across the Tulsa metro." breadcrumbs={[{name:'Home',path:'/'},{name:'Service Areas',path:'/service-areas'}]} />
+
+  <section class="hero">
+    <div class="container">
+      <h1>Tulsa-Metro Termite Service Areas</h1>
+      <p class="sub">We help homeowners across the Tulsa metro request termite inspections and understand what to do next. Local conditions matter — here's what to know in your area.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="quick-answer"><strong>Quick Answer</strong>Smart Termite Tulsa helps homeowners in Tulsa, Broken Arrow, Jenks, Bixby, Owasso, Sand Springs, Sapulpa, Glenpool, Claremore, and Catoosa connect with professional termite inspections and education.</div>
+
+      {areas.map(a => (
+        <div style="margin-bottom:34px;">
+          <h2>{a.name}, OK</h2>
+          <p>{a.body}</p>
+          <p><a href="/contact" data-event="cta_click" data-service-area={a.name}>Request an inspection in {a.name} &rarr;</a></p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section><div class="container"><LeadForm heading="Request an Inspection in Your Area" /></div></section>
+  <CTA />
+</BaseLayout>

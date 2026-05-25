@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import TrustCards from '../components/TrustCards.astro';
+import LeadForm from '../components/LeadForm.astro';
+import ServiceAreaGrid from '../components/ServiceAreaGrid.astro';
+import ChecklistCTA from '../components/ChecklistCTA.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import CTA from '../components/CTA.astro';
+import Schema from '../components/Schema.astro';
+
+const warningSigns = [
+  { name: 'Mud tubes on foundations or crawlspace walls', detail: 'Pencil-thin dirt tunnels running up your foundation are the single clearest sign of subterranean termite activity. They protect termites as they travel from soil to wood.' },
+  { name: 'Discarded wings near windows and door frames', detail: 'After a swarm, reproductive termites shed their wings. Small piles of identical translucent wings on sills or in spider webs are a major red flag.' },
+  { name: 'Soft, spongy, or hollow-sounding wood', detail: 'Tap baseboards, door frames, and trim with a screwdriver handle. Damaged wood often sounds hollow or feels papery under pressure.' },
+  { name: 'Bubbling, blistering, or peeling paint', detail: 'When termites tunnel just beneath painted surfaces, moisture builds up and paint blisters in patterns that look like minor water damage.' },
+  { name: 'Doors or windows that suddenly stick', detail: 'Termite damage can warp wood frames slightly. If a door or window that worked fine last year is now sticking, look closer.' },
+  { name: 'Tiny piles of wood-colored pellets (frass)', detail: 'Drywood termites push small, ridged pellets out of their galleries. Pellets that look like coffee grounds or sawdust deserve attention.' },
+  { name: 'Swarmers near interior windows in spring', detail: 'In Oklahoma, termite swarms typically appear from March through May. Winged termites trapped at indoor windows are an indoor-activity warning.' },
+  { name: 'Moisture or wood-soil contact near crawlspaces', detail: 'Damp crawlspaces, leaking spigots, and wood siding touching soil create the high-moisture entry conditions termites love.' },
+  { name: 'Damaged or crumbling baseboards and trim', detail: 'Baseboards that flake apart, dent under a fingernail, or show vertical cracks may already have active termite galleries inside.' },
+  { name: 'Previous termite history in the home or neighborhood', detail: 'If your home or a neighbor\'s home has had termites before, your risk is elevated and annual inspections are especially important.' },
+];
+
+const faqs = [
+  { q: 'How do I know if my Tulsa home has termites?', a: 'Look for mud tubes on the foundation, discarded wings near windows, soft or hollow-sounding wood, and swarmers in spring. A professional inspection is the only way to confirm activity.' },
+  { q: 'When is termite swarm season in Tulsa?', a: 'Subterranean termite swarms typically occur in the Tulsa area from March through May, often after a warm rain. Drywood termites can swarm later in the year.' },
+  { q: 'Should I get a termite inspection if I have not seen any signs?', a: 'Yes. Annual inspections catch slow, hidden damage before it becomes expensive. Most homeowners do not see termites until significant damage has already occurred.' },
+  { q: 'Are termites common in the Tulsa area?', a: 'Eastern subterranean termites are present throughout Oklahoma, including the entire Tulsa metro. Local soil and moisture conditions make this a known risk area.' },
+  { q: 'How much does a termite inspection cost?', a: 'Inspection pricing varies by provider and home size. Many companies offer a no-obligation quote when you request an inspection.' },
+  { q: 'What if I find termites today?', a: 'Do not disturb the area. Termites scatter when disturbed, which can make activity harder to locate. Request a professional inspection so the full extent can be evaluated.' },
+];
+---
+<BaseLayout
+  title="Smart Termite Tulsa | Termite Inspections & Warning Signs in Tulsa, OK"
+  description="Worried about termites in your Tulsa home? See the warning signs, understand your options, and request a professional termite inspection across the Tulsa metro."
+>
+  <Schema type="WebSite" />
+
+  <Hero />
+
+  <section>
+    <div class="container">
+      <div class="quick-answer">
+        <strong>Quick Answer</strong>
+        How do I know if my Tulsa home may have termites? Look for mud tubes on the foundation, discarded wings near windows, hollow-sounding wood, or springtime swarmers inside the house. Any of these signs is worth a professional inspection — they rarely appear without active termite pressure somewhere on the property.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>10 Termite Warning Signs Tulsa Homeowners Should Know</h2>
+      <p class="muted" style="max-width:720px;">Most termite damage is slow, hidden, and easy to miss until repair costs add up. Walk through your home with this list and request an inspection if anything looks familiar.</p>
+      <div class="cards mt-lg">
+        {warningSigns.map((s, i) => (
+          <div class="card">
+            <div class="icon">{String(i + 1).padStart(2, '0')}</div>
+            <h3>{s.name}</h3>
+            <p>{s.detail}</p>
+          </div>
+        ))}
+      </div>
+      <div style="margin-top:28px;">
+        <a href="/tulsa-termite-warning-signs" class="btn btn-secondary" data-event="cta_click" data-lead-type="warning_signs">Full Warning Signs Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <LeadForm />
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Why Tulsa Homes Are a Termite-Risk Area</h2>
+      <p>Eastern Oklahoma sits squarely inside the active range of the eastern subterranean termite, the most economically destructive wood-eating insect in North America. Tulsa's climate, soil, and housing stock combine to create one of the more challenging termite environments in the state.</p>
+      <p>The Tulsa metro is built on a mix of expansive clay soils and river-bottom sediments. Clay soils hold moisture longer than sandy soils, and they shift seasonally — opening hairline cracks in slabs and foundations that termites use as entry points. Many homes in older Tulsa neighborhoods (Brookside, Maple Ridge, Riverview, and parts of midtown) sit on pier-and-beam or partial basement foundations with crawlspaces that stay slightly damp year-round.</p>
+      <p>Local swarm season typically runs from March through May, often kicked off by the first warm rain after a stretch of cool weather. Homeowners in Tulsa, Broken Arrow, Jenks, and Bixby commonly see swarmers at indoor windows during this period. By the time swarmers appear inside, an established colony has usually been present nearby for several years.</p>
+      <p>Tulsa-area homes are especially appealing to termites when any of these conditions are present: wood siding or trim within six inches of the soil, mulch piled against the foundation, leaking spigots or AC condensate lines, untreated firewood stacked against an exterior wall, or shaded crawlspaces with poor ventilation. None of these conditions guarantee termites — but each one raises the odds.</p>
+      <p>Older Tulsa neighborhoods deserve special mention. Homes built before the 1970s often used softer framing lumber and were constructed before modern termite-prevention building codes. If your home is more than 30 years old and has never had a documented termite inspection, an inspection is one of the highest-value things you can do for your property.</p>
+    </div>
+  </section>
+
+  <TrustCards />
+
+  <section>
+    <div class="container">
+      <h2>Common Termite Treatment Approaches</h2>
+      <p class="muted" style="max-width:720px;">Treatment is a decision best made after a professional inspection. These are the approaches a licensed termite professional may discuss with you — the right fit depends on your home, your soil, and the type and extent of activity present.</p>
+      <div class="cards mt-lg">
+        <div class="card"><h3>Liquid Soil Treatment (Termiticide Barrier)</h3><p>A continuous treated zone is established in the soil around and under the foundation. Termites passing through the zone carry the active ingredient back to the colony.</p></div>
+        <div class="card"><h3>Bait Station Systems</h3><p>In-ground stations placed around the home contain wood or cellulose monitors. Once activity is detected, the monitor is replaced with bait designed to eliminate the colony.</p></div>
+        <div class="card"><h3>Direct Wood Treatments</h3><p>Borate or foam treatments applied to exposed wood inside walls or crawlspaces can stop active galleries and add a layer of long-term protection.</p></div>
+        <div class="card"><h3>Moisture Correction</h3><p>Fixing drainage, repairing leaks, regrading soil, and improving crawlspace ventilation often does more to prevent reinfestation than any single chemical step.</p></div>
+        <div class="card"><h3>New-Construction Pre-Treatment</h3><p>Treating soil before the slab is poured is a one-time opportunity to build long-term protection into the home from day one.</p></div>
+        <div class="card"><h3>Annual Re-Inspection</h3><p>Whatever treatment path you choose, an annual inspection is the single most important step for catching new activity early.</p></div>
+      </div>
+      <p class="muted" style="font-size:0.88rem;margin-top:18px;">Every home is different. A licensed termite professional can evaluate which approach (or combination) may be appropriate for your situation.</p>
+    </div>
+  </section>
+
+  <ServiceAreaGrid />
+
+  <ChecklistCTA />
+
+  <section>
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <FAQAccordion items={faqs} />
+      <p style="margin-top:18px;"><a href="/faq">See all 25 termite FAQs &rarr;</a></p>
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

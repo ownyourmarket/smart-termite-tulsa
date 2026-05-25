@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+import CTA from '../components/CTA.astro';
+import Schema from '../components/Schema.astro';
+
+const signs = [
+  'Mud tubes on foundations, piers, or crawlspace walls',
+  'Discarded wings near windows and door frames',
+  'Soft, spongy, or hollow-sounding wood',
+  'Bubbling, blistering, or peeling paint',
+  'Doors or windows that suddenly stick',
+  'Tiny piles of wood-colored pellets (frass)',
+  'Swarmers near interior windows in spring',
+  'Damp crawlspace or wood-to-soil contact',
+  'Damaged, crumbling, or cracked baseboards and trim',
+  'Previous termite history in the home or neighborhood',
+];
+---
+<BaseLayout
+  title="Free Tulsa Termite Warning Signs Checklist (Printable)"
+  description="A free, printable termite warning signs checklist for Tulsa-area homeowners. Walk through your home in 15 minutes."
+>
+  <Schema type="Article" name="Termite Warning Signs Checklist" description="Free printable termite warning signs checklist for Tulsa homeowners." breadcrumbs={[{name:'Home',path:'/'},{name:'Checklist',path:'/termite-warning-signs-checklist'}]} />
+
+  <section class="hero">
+    <div class="container">
+      <h1>Free Termite Warning Signs Checklist</h1>
+      <p class="sub">Print this page or follow along on your phone. Walk your home top to bottom — attic, living spaces, baseboards, then crawlspace or basement, then exterior perimeter. Check anything that looks familiar.</p>
+      <button onclick="window.print()" class="btn btn-primary" data-event="cta_click" data-lead-type="checklist_print">Print the Checklist</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="quick-answer"><strong>Quick Answer</strong>Walk through your home checking for these 10 termite warning signs. If you find one or more, request a professional inspection — do not disturb the area first.</div>
+
+      <h2>The 10-Item Termite Warning Signs Checklist</h2>
+      <ul class="clean">
+        {signs.map(s => <li>☐ &nbsp; {s}</li>)}
+      </ul>
+
+      <div class="aeo-block"><h3>What it means</h3><p>This checklist mirrors what a professional inspector looks for first. It is meant as a homeowner self-screen, not a substitute for a real inspection.</p></div>
+      <div class="aeo-block"><h3>When to call a professional</h3><p>Any single checked item is worth a call. Multiple items strongly indicate active or recent termite activity.</p></div>
+      <div class="aeo-block"><h3>What to do next</h3><p>Photograph what you found. Do not disturb the area. Request an inspection using the form below.</p></div>
+      <div class="aeo-block"><h3>Related questions</h3><ul><li><a href="/tulsa-termite-warning-signs">Full warning signs guide</a></li><li><a href="/termite-inspection-tulsa">About professional inspections</a></li></ul></div>
+    </div>
+  </section>
+
+  <section><div class="container"><LeadForm compact={true} heading="Email Me a Copy & Request Inspection Help" sub="We'll follow up with next steps based on what you found." /></div></section>
+  <CTA heading="Found something on the list?" sub="Request a professional inspection — fast follow-up, plain-English next steps." />
+</BaseLayout>

@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+import CTA from '../components/CTA.astro';
+import Schema from '../components/Schema.astro';
+---
+<BaseLayout
+  title="About Smart Termite Tulsa | Local Termite Education & Inspection Requests"
+  description="Smart Termite Tulsa is a local education and inspection-request brand focused on helping Tulsa-area homeowners understand termites and request professional help."
+>
+  <Schema type="Article" name="About Smart Termite Tulsa" description="Local termite education and inspection requests for Tulsa-area homeowners." breadcrumbs={[{name:'Home',path:'/'},{name:'About',path:'/about'}]} />
+
+  <section class="hero">
+    <div class="container">
+      <h1>About Smart Termite Tulsa</h1>
+      <p class="sub">A local brand built around one simple idea: Tulsa homeowners deserve plain-English termite education and a fast, no-pressure way to request professional help.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Our mission</h2>
+      <p>Most homeowners don't think about termites until there's a problem. By then, it's often expensive. Smart Termite Tulsa exists to change that — by giving Tulsa-area homeowners a clear, friendly resource for understanding what termite activity actually looks like, what their options are, and how to request a professional inspection when they need one.</p>
+
+      <h2>What we do</h2>
+      <p>We publish straightforward education about termite warning signs, treatment options, and prevention habits — specific to the Tulsa metro and the conditions local homes actually face. We also accept inspection requests and help connect Tulsa-area homeowners with qualified, licensed termite professionals.</p>
+
+      <h2>What we don't do</h2>
+      <p>We don't make guarantees. We don't use scare tactics. We don't pressure anyone into treatment they don't need. We don't claim awards or credentials we haven't earned. We're not the right fit for every homeowner — and we'd rather you trust us than oversell to you.</p>
+
+      <h2>Why Tulsa</h2>
+      <p>Tulsa, Broken Arrow, Jenks, Bixby, Owasso, Sand Springs, Sapulpa, Glenpool, Claremore, and Catoosa share a common termite environment shaped by Oklahoma clay soils, mature trees, and a long swarm season. Local conditions deserve local information — that's the work we focus on.</p>
+
+      <h2>Get in touch</h2>
+      <p>Use any contact form on the site, or reach us directly by phone or email. We respond to every inquiry within one business day.</p>
+    </div>
+  </section>
+
+  <section><div class="container"><LeadForm /></div></section>
+  <CTA />
+</BaseLayout>

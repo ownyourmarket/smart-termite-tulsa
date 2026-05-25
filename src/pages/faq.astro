@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import LeadForm from '../components/LeadForm.astro';
+import CTA from '../components/CTA.astro';
+import Schema from '../components/Schema.astro';
+
+const faqs = [
+  { q: 'How do I know if my Tulsa home has termites?', a: 'Look for mud tubes on the foundation, discarded wings near windows and door frames, soft or hollow-sounding wood, blistering paint, and swarmers indoors during spring. A professional inspection is the only reliable way to confirm activity.' },
+  { q: 'When is termite swarm season in Tulsa?', a: 'Subterranean termite swarms in the Tulsa area typically occur March through May, usually triggered by a warm rain after cooler weather. Drywood termites can swarm later in the year.' },
+  { q: 'How often should I get a termite inspection?', a: 'At least once a year. Subterranean termites can establish a colony and cause meaningful damage within 18 to 36 months, which is well inside an annual inspection cycle.' },
+  { q: 'How long does a termite inspection take?', a: 'A thorough inspection of an average Tulsa home usually takes 45 to 90 minutes, depending on home size, crawlspace or basement accessibility, and how much is stored in the garage and attic.' },
+  { q: 'What does an inspector actually check?', a: 'The foundation perimeter, crawlspace or basement, accessible attic, baseboards, door and window frames, plumbing penetrations, bath traps, garage walls, and any wood-to-soil contact around the property.' },
+  { q: 'How much does a termite inspection cost?', a: 'Pricing varies by provider and home size. Many local companies offer a no-obligation quote when you request an inspection.' },
+  { q: 'What should I do if I find termites?', a: 'Do not disturb the area — termites scatter when disturbed and become harder to locate. Photograph what you found, save a few specimens if possible, and request a professional inspection.' },
+  { q: 'Are termites common in the Tulsa area?', a: 'Yes. Eastern subterranean termites are present throughout Oklahoma, including the entire Tulsa metro. Local soils, climate, and housing stock make this a known risk area.' },
+  { q: 'What kinds of termites are in Oklahoma?', a: 'Eastern subterranean termites are by far the most common in Oklahoma. Drywood termites are less common but do occur. The vast majority of Tulsa-area cases involve subterranean species.' },
+  { q: 'Can I treat termites myself?', a: 'DIY products rarely eliminate established subterranean colonies. They often suppress visible activity briefly while damage continues elsewhere. Professional treatment is strongly recommended.' },
+  { q: 'What is the difference between liquid termiticide and bait stations?', a: 'Liquid termiticide creates a treated soil zone around the foundation. Bait stations are in-ground monitors that deliver bait once termite activity is detected. Each has tradeoffs — a licensed professional can recommend the best fit.' },
+  { q: 'How long does termite treatment last?', a: 'Modern liquid treatments can remain effective for several years, depending on product, soil, and application. Bait systems are ongoing programs with quarterly monitoring.' },
+  { q: 'Will my homeowners insurance cover termite damage?', a: 'Typically no. Most homeowners policies exclude termite damage because it is considered a maintenance issue. This is why prevention and annual inspections matter.' },
+  { q: 'Do termites only eat wood?', a: 'Subterranean termites primarily eat cellulose, which is found in wood, paper, cardboard, and some insulation materials. They do not eat masonry, plastic, or metal.' },
+  { q: 'Can termites get into a slab home?', a: 'Yes. Termites enter slab homes through expansion joints, plumbing penetrations, bath traps, and hairline cracks. A slab does not prevent termite entry.' },
+  { q: 'What attracts termites to a home?', a: 'Moisture, wood-to-soil contact, mulch piled against the foundation, leaking spigots or AC lines, untreated wood storage, and poor drainage all increase termite risk.' },
+  { q: 'Are swarmers dangerous?', a: 'Swarmers do not bite, sting, or damage wood themselves. They are reproductive termites looking to start new colonies. Their presence indoors usually means an established colony is nearby.' },
+  { q: 'How are termites different from flying ants?', a: 'Termites have straight antennae, equal-length wings, and a broad waist. Flying ants have bent antennae, unequal wings, and a pinched waist. A quick photo helps a professional identify them.' },
+  { q: 'Do I need an inspection before buying a home in Tulsa?', a: 'Strongly recommended. A pre-purchase termite (WDI/WDO) inspection is standard in many real estate transactions and can save substantial future repair costs.' },
+  { q: 'Are termites active year-round in Tulsa?', a: 'Yes. Subterranean termites stay active inside heated homes and below the frost line throughout the year. Swarming is seasonal, but feeding is continuous.' },
+  { q: 'Can I prevent termites without chemicals?', a: 'You can significantly reduce risk through moisture control, removing wood-to-soil contact, fixing drainage, and addressing landscaping. Chemical treatments are usually still recommended for confirmed activity.' },
+  { q: 'Will mulch attract termites?', a: 'Mulch itself does not strongly attract termites, but thick mulch piled against the foundation creates moist, hidden conditions termites use to reach the home. Keep a bare strip between mulch and the foundation.' },
+  { q: 'How fast can termites cause damage?', a: 'A mature colony can consume noticeable amounts of wood within months. Structural damage typically becomes visible after 18 to 36 months of undetected activity.' },
+  { q: 'Do new homes need termite protection?', a: 'Yes. Pre-construction soil treatment is a one-time, highly effective option for new builds in the Tulsa metro. Existing newer homes still benefit from annual inspections.' },
+  { q: 'How do I get started with Smart Termite Tulsa?', a: 'Use any contact form on the site to request an inspection. Tell us what you are seeing and where in your home. We follow up within one business day with next steps.' },
+];
+---
+<BaseLayout
+  title="Termite FAQ for Tulsa Homeowners | Smart Termite Tulsa"
+  description="25 plain-English answers to the most common termite questions from Tulsa-area homeowners — inspections, treatments, prevention, and what to do if you find termites."
+>
+  <Schema type="Article" name="Termite FAQ for Tulsa Homeowners" description="Common termite questions from Tulsa homeowners." breadcrumbs={[{name:'Home',path:'/'},{name:'FAQ',path:'/faq'}]} faqs={faqs} />
+
+  <section class="hero">
+    <div class="container">
+      <h1>Termite FAQ for Tulsa Homeowners</h1>
+      <p class="sub">25 of the most common questions we hear from Tulsa-area homeowners, answered in plain English. Still have a question? Reach out below.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <FAQAccordion items={faqs} />
+    </div>
+  </section>
+
+  <section><div class="container"><LeadForm heading="Still have a question? Ask us." sub="Tell us what you're trying to figure out. We'll help." /></div></section>
+  <CTA />
+</BaseLayout>

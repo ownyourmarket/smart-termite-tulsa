@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+import CTA from '../components/CTA.astro';
+import Schema from '../components/Schema.astro';
+---
+<BaseLayout
+  title="Termite Treatment Options for Tulsa Homes | Smart Termite Tulsa"
+  description="Understand the common termite treatment approaches available to Tulsa homeowners: liquid barriers, bait stations, wood treatments, and moisture correction."
+>
+  <Schema type="Service" serviceName="Termite Treatment Guidance" name="Termite Treatment Options" description="Education and inspection requests covering common termite treatment approaches in the Tulsa area." breadcrumbs={[{name:'Home',path:'/'},{name:'Treatment Options',path:'/termite-treatment-options'}]} />
+
+  <section class="hero">
+    <div class="container">
+      <h1>Termite Treatment Options Explained</h1>
+      <p class="sub">A plain-English overview of the most common termite treatment approaches used on Tulsa-area homes — and how a licensed professional decides which one may fit your situation.</p>
+      <a href="/contact" class="btn btn-primary" data-event="cta_click" data-lead-type="request_inspection">Request an Inspection</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="quick-answer"><strong>Quick Answer</strong>The most common termite treatments are liquid soil termiticides (perimeter barriers), in-ground bait station systems, direct wood treatments with borates or foams, and moisture correction. The right choice depends on home construction, type of termite, and extent of activity — a licensed termite professional can evaluate which approach may be appropriate for your situation.</div>
+
+      <div class="aeo-block"><h3>What it means</h3><p>Termite "treatment" is not a single product. It is a combination of chemical, mechanical, and environmental steps designed to either eliminate an existing colony or protect a home from future colonies. Tulsa homes often need a blended approach because of clay soils, mature trees, and varying foundation types.</p></div>
+      <div class="aeo-block"><h3>When to call a professional</h3><p>Always have treatment selected and applied by a licensed termite professional. DIY termite control is rarely effective against established subterranean colonies and often delays a real fix while damage continues.</p></div>
+      <div class="aeo-block"><h3>What to do next</h3><p>Start with a professional inspection. Treatment recommendations only make sense after the type, location, and extent of activity are known. <a href="/contact">Request an inspection &rarr;</a></p></div>
+      <div class="aeo-block"><h3>Related questions</h3><ul><li><a href="/termite-inspection-tulsa">What does a termite inspection include?</a></li><li><a href="/termite-prevention-guide">How can I prevent termites long-term?</a></li><li><a href="/faq">See all termite FAQs</a></li></ul></div>
+
+      <h2 style="margin-top:40px;">Liquid soil termiticide (perimeter barrier)</h2>
+      <p>The traditional approach for Tulsa-area subterranean termites. A licensed applicator trenches and treats the soil around the foundation, plus key entry points like plumbing penetrations and bath traps. Modern non-repellent termiticides (such as those containing fipronil or chlorantraniliprole) are designed so termites can pass through the treated zone without detecting it — picking up active ingredient that gets carried back to the colony. A properly applied liquid treatment can remain effective for several years, though re-treatment intervals vary by product and conditions.</p>
+
+      <h2>Bait station systems</h2>
+      <p>In-ground bait stations are installed at regular intervals around the home's perimeter, typically 10 to 15 feet apart. Stations start with a wood or cellulose monitor; once termite activity is detected, the monitor is replaced with a bait matrix containing an insect growth regulator. Termites consume the bait, share it through the colony, and the colony declines over time. Bait systems require ongoing monitoring — usually quarterly visits — but cause minimal disruption to landscaping.</p>
+
+      <h2>Direct wood treatments</h2>
+      <p>Borate solutions and termiticide foams can be applied directly to active galleries inside walls, baseboards, crawlspace beams, and sill plates. Borates are commonly used during construction or remodels because they penetrate wood and protect it from the inside out. Foams are useful for spot-treating active areas without major demolition.</p>
+
+      <h2>Moisture correction</h2>
+      <p>The single most underrated termite control step. Termites need moisture. Fixing drainage at the foundation, repairing leaking spigots and AC condensate lines, adding gutter extensions, regrading soil so it slopes away from the home, sealing crawlspace vapor barriers, and trimming back vegetation often reduces termite pressure dramatically. Many Tulsa homes that have had termites once will have them again if these conditions are not addressed.</p>
+
+      <h2>New-construction pre-treatment</h2>
+      <p>If you're building a new home in the Tulsa metro, pre-treating the soil before the slab is poured is a one-time opportunity to add years of protection. This is a small line item during construction and is far more effective than retrofit treatments later.</p>
+
+      <h2>Annual inspections — the through-line</h2>
+      <p>No matter which treatment path you choose, annual inspections are non-negotiable. Treatments degrade. Conditions change. A new colony can establish itself in soil disturbed by landscaping or utility work. An annual check catches issues early, when they are still inexpensive to address.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container"><LeadForm heading="Talk to a Local Termite Professional" sub="Tell us what you've found. We'll help you understand which treatment approach may fit and connect you with a licensed local inspector." /></div>
+  </section>
+
+  <CTA />
+</BaseLayout>

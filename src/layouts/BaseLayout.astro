@@ -1,0 +1,106 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import StickyMobileBar from '../components/StickyMobileBar.astro';
+import '../styles/global.css';
+
+const {
+  title = 'Smart Termite Tulsa | Termite Inspection & Education in Tulsa, OK',
+  description = 'Worried about termites in your Tulsa home? Smart Termite Tulsa helps homeowners spot warning signs and request a professional termite inspection across the Tulsa metro.',
+  canonical,
+  ogImage = '/images/og-default.jpg',
+  pageType = 'website',
+} = Astro.props;
+
+const url = canonical || new URL(Astro.url.pathname, Astro.site).toString();
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={url} />
+  <meta property="og:type" content={pageType} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={url} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:site_name" content="Smart Termite Tulsa" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- TODO: Google Analytics 4 — paste your GA4 measurement ID below
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
+  -->
+
+  <!-- TODO: Google Tag Manager — paste GTM ID
+  <script>(function(w,d,s,l,i){...})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  -->
+
+  <!-- TODO: Microsoft Clarity — paste project ID
+  <script>(function(c,l,a,r,i,t,y){...})(window, document, "clarity", "script", "XXXXXXX");</script>
+  -->
+
+  <!-- TODO: PostHog — paste your project key
+  <script>!function(t,e){...}(document,window.posthog||[]);posthog.init('phc_XXXX',{api_host:'https://app.posthog.com'})</script>
+  -->
+
+  <slot name="head" />
+</head>
+<body>
+  <Header />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+  <StickyMobileBar />
+
+  <script is:inline>
+    // Lightweight tracking shim — pushes events to dataLayer and logs in dev
+    (function () {
+      window.dataLayer = window.dataLayer || [];
+      function push(payload) {
+        try { window.dataLayer.push(payload); } catch (e) {}
+        if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+          console.log('[track]', payload);
+        }
+      }
+      document.addEventListener('click', function (e) {
+        var el = e.target.closest('[data-event]');
+        if (!el) return;
+        push({
+          event: el.getAttribute('data-event'),
+          lead_type: el.getAttribute('data-lead-type') || undefined,
+          page: el.getAttribute('data-page') || location.pathname,
+          service_area: el.getAttribute('data-service-area') || undefined,
+          link_url: el.getAttribute('href') || undefined,
+        });
+      });
+      document.addEventListener('submit', function (e) {
+        var f = e.target.closest('form[data-event]');
+        if (!f) return;
+        push({
+          event: f.getAttribute('data-event'),
+          lead_type: f.getAttribute('data-lead-type') || undefined,
+          page: f.getAttribute('data-page') || location.pathname,
+          service_area: f.getAttribute('data-service-area') || undefined,
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

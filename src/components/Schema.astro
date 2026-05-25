@@ -1,0 +1,56 @@
+---
+const { type = 'LocalBusiness', name, description, breadcrumbs = [], faqs = [], serviceName } = Astro.props;
+const siteUrl = 'https://www.smarttermitetulsa.com';
+const pageUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const areas = ['Tulsa','Broken Arrow','Jenks','Bixby','Owasso','Sand Springs','Sapulpa','Glenpool','Claremore','Catoosa'];
+
+const localBusiness = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': siteUrl + '#business',
+  name: 'Smart Termite Tulsa',
+  url: siteUrl,
+  // TODO: Replace with final business / call-tracking number
+  telephone: '+1-918-555-0199',
+  // TODO: Replace with final business email
+  email: 'hello@smarttermitetulsa.com',
+  description: 'Local termite education and inspection request service for Tulsa-area homeowners.',
+  areaServed: areas.map(a => ({ '@type': 'City', name: a + ', OK' })),
+};
+
+const website = { '@context': 'https://schema.org', '@type': 'WebSite', url: siteUrl, name: 'Smart Termite Tulsa' };
+
+const service = serviceName ? {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: serviceName,
+  provider: { '@type': 'LocalBusiness', name: 'Smart Termite Tulsa', url: siteUrl },
+  areaServed: areas.map(a => ({ '@type': 'City', name: a + ', OK' })),
+  name: name || serviceName,
+  description: description,
+} : null;
+
+const faqPage = faqs.length ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a.replace(/<[^>]+>/g, '') } })),
+} : null;
+
+const breadcrumbList = breadcrumbs.length ? {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbs.map((b, i) => ({ '@type': 'ListItem', position: i + 1, name: b.name, item: new URL(b.path, siteUrl).toString() })),
+} : null;
+
+const contactPage = type === 'ContactPage' ? {
+  '@context': 'https://schema.org', '@type': 'ContactPage', url: pageUrl, name: name || 'Contact Smart Termite Tulsa',
+} : null;
+
+const article = type === 'Article' ? {
+  '@context': 'https://schema.org', '@type': 'Article', headline: name, description, url: pageUrl,
+  publisher: { '@type': 'Organization', name: 'Smart Termite Tulsa', url: siteUrl },
+} : null;
+
+const blocks = [localBusiness, type === 'WebSite' ? website : null, service, faqPage, breadcrumbList, contactPage, article].filter(Boolean);
+---
+{blocks.map(b => <script type="application/ld+json" set:html={JSON.stringify(b)} />)}

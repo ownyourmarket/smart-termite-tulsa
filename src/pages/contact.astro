@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+import Schema from '../components/Schema.astro';
+---
+<BaseLayout
+  title="Contact Smart Termite Tulsa | Request a Termite Inspection"
+  description="Contact Smart Termite Tulsa to request a termite inspection across the Tulsa metro. Phone, email, or use our quick form — we respond within one business day."
+>
+  <Schema type="ContactPage" name="Contact Smart Termite Tulsa" breadcrumbs={[{name:'Home',path:'/'},{name:'Contact',path:'/contact'}]} />
+
+  <section class="hero">
+    <div class="container">
+      <h1>Contact Smart Termite Tulsa</h1>
+      <p class="sub">Request a termite inspection, ask a question, or tell us what you're seeing. We respond to every inquiry within one business day.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" style="display:grid;grid-template-columns:1fr 1.4fr;gap:36px;">
+      <div>
+        <h2>Reach us</h2>
+        <p><strong>Phone:</strong><br/>
+          <!-- TODO: Replace with final business / call-tracking number -->
+          <a href="tel:+19185550199" data-event="call_click" data-lead-type="phone">(918) 555-0199</a>
+        </p>
+        <p><strong>Email:</strong><br/>
+          <!-- TODO: Replace with final business email -->
+          <a href="mailto:hello@smarttermitetulsa.com" data-event="email_click">hello@smarttermitetulsa.com</a>
+        </p>
+        <h3>Service areas</h3>
+        <p class="muted">Tulsa, Broken Arrow, Jenks, Bixby, Owasso, Sand Springs, Sapulpa, Glenpool, Claremore, and Catoosa.</p>
+
+        <p class="muted" style="font-size:0.82rem;margin-top:24px;">By contacting Smart Termite Tulsa you agree we may follow up by phone, text, or email about your inquiry. Message and data rates may apply. Reply STOP at any time to opt out. We do not sell or share your information.</p>
+      </div>
+      <div>
+        <LeadForm />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  @media (max-width: 800px) {
+    section .container[style] { grid-template-columns: 1fr !important; }
+  }
+</style>

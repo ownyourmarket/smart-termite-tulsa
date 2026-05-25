@@ -1,0 +1,35 @@
+---
+// Smart Termite Tulsa header
+---
+<header class="site-header">
+  <div class="inner">
+    <a href="/" class="logo" data-event="nav_logo_click">Smart Termite Tulsa</a>
+    <nav id="primary-nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/termite-inspection-tulsa">Inspection</a>
+      <a href="/termite-treatment-options">Treatment</a>
+      <a href="/termite-prevention-guide">Prevention</a>
+      <a href="/tulsa-termite-warning-signs">Warning Signs</a>
+      <a href="/service-areas">Service Areas</a>
+      <a href="/faq">FAQ</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <!-- TODO: Replace with final business / call-tracking number -->
+      <a href="tel:+19185550199" class="header-call" data-event="call_click" data-lead-type="phone">Call (918) 555-0199</a>
+      <a href="/contact" class="btn btn-primary" data-event="cta_click" data-lead-type="request_inspection">Request Inspection</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+    </div>
+  </div>
+</header>
+<script is:inline>
+  (function(){
+    var btn = document.getElementById('menu-toggle');
+    var nav = document.getElementById('primary-nav');
+    if (!btn || !nav) return;
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  })();
+</script>

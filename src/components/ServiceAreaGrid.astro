@@ -1,0 +1,28 @@
+---
+const areas = [
+  { name: 'Tulsa', blurb: 'Older midtown homes, mature trees, and decades of foundation settling make Tulsa a high-priority area for termite awareness.' },
+  { name: 'Broken Arrow', blurb: 'Rapid growth and a mix of newer subdivisions and established neighborhoods means a wide range of termite risk profiles.' },
+  { name: 'Jenks', blurb: 'Riverside soils and irrigated lawns can elevate moisture near foundations, one of the conditions termites love.' },
+  { name: 'Bixby', blurb: 'Bixby riverfront properties and lush landscaping often create the moist soil conditions that subterranean termites prefer.' },
+  { name: 'Owasso', blurb: 'Newer construction is not immune — settling, landscaping, and irrigation lines can still create entry points over time.' },
+  { name: 'Sand Springs', blurb: 'Older bungalows and crawlspaces in Sand Springs deserve regular inspection for hidden termite activity.' },
+  { name: 'Sapulpa', blurb: 'Historic homes and shaded lots benefit from annual checks for mud tubes, soft wood, and swarmer activity.' },
+  { name: 'Glenpool', blurb: 'Growing neighborhoods on clay-heavy soils can shift over time, creating cracks that allow termite entry.' },
+  { name: 'Claremore', blurb: 'Rural-edge homes with wood storage, fences, or outbuildings should be inspected at least once a year.' },
+  { name: 'Catoosa', blurb: 'Mixed home ages and varying drainage mean termite risk is best evaluated property-by-property.' },
+];
+---
+<section>
+  <div class="container">
+    <h2>Tulsa-Metro Service Areas</h2>
+    <p class="muted" style="max-width:680px;">We help homeowners across the Tulsa metro request termite inspections and understand what they're seeing.</p>
+    <div class="area-grid mt-lg">
+      {areas.map(a => (
+        <a href="/service-areas" class="area" data-event="area_click" data-service-area={a.name}>
+          <h3>{a.name}</h3>
+          <p>{a.blurb}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

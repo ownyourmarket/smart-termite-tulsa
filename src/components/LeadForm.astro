@@ -1,0 +1,172 @@
+﻿---
+const {
+  heading = 'Request a Termite Inspection',
+  sub = 'Tell us what you are seeing and where. We will follow up to help you figure out the right next step.',
+  serviceArea = '',
+  compact = false,
+} = Astro.props;
+
+// === Endpoint configuration ============================================================
+// Replace REPLACE_WITH_UGotLeads_WEBHOOK_OR_FORM_ENDPOINT with your live endpoint.
+//
+// UGotLeads webhook example:        https://api.UGotLeads.com/v1/inbound/<workspace>/<key>
+// Formspree example:                https://formspree.io/f/xxxxxxxx
+// Basin example:                    https://usebasin.com/f/xxxxxxxxxxxx
+// Supabase Edge Function example:   https://<project>.functions.supabase.co/lead-intake
+// Zapier Webhook example:           https://hooks.zapier.com/hooks/catch/123456/abcdef/
+// =====================================================================================
+const ACTION = 'REPLACE_WITH_UGotLeads_WEBHOOK_OR_FORM_ENDPOINT';
+---
+<form
+  class="lead-form"
+  action={ACTION}
+  method="POST"
+  data-event="lead_submit"
+  data-lead-type="termite-inspection-request"
+  data-page={Astro.url.pathname}
+  data-service-area={serviceArea}
+  novalidate
+>
+  {!compact && <h2>{heading}</h2>}
+  {compact && <h3>{heading}</h3>}
+  {sub && <p class="muted" style="margin-top:-6px;">{sub}</p>}
+
+  <!-- Honeypot â€” bots only -->
+  <div class="honeypot" aria-hidden="true">
+    <label>Website<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+  </div>
+
+  <div class="form-grid" style="margin-top:14px;">
+    <div>
+      <label for="first_name">First name *</label>
+      <input id="first_name" name="first_name" required autocomplete="given-name" />
+    </div>
+    <div>
+      <label for="last_name">Last name *</label>
+      <input id="last_name" name="last_name" required autocomplete="family-name" />
+    </div>
+    <div>
+      <label for="phone">Phone *</label>
+      <input id="phone" name="phone" type="tel" required autocomplete="tel" />
+    </div>
+    <div>
+      <label for="email">Email *</label>
+      <input id="email" name="email" type="email" required autocomplete="email" />
+    </div>
+    <div>
+      <label for="address_or_zip">Address or ZIP *</label>
+      <input id="address_or_zip" name="address_or_zip" required autocomplete="street-address" />
+    </div>
+    <div>
+      <label for="city">City *</label>
+      <select id="city" name="city" required>
+        <option value="">Select your city</option>
+        <option>Tulsa</option>
+        <option>Broken Arrow</option>
+        <option>Jenks</option>
+        <option>Bixby</option>
+        <option>Owasso</option>
+        <option>Sand Springs</option>
+        <option>Sapulpa</option>
+        <option>Glenpool</option>
+        <option>Claremore</option>
+        <option>Catoosa</option>
+        <option>Other Tulsa-metro</option>
+      </select>
+    </div>
+    <div>
+      <label for="service_needed">What do you need? *</label>
+      <select id="service_needed" name="service_needed" required>
+        <option value="">Select an option</option>
+        <option>Termite inspection</option>
+        <option>Termite treatment</option>
+        <option>Termite warning signs</option>
+        <option>Annual prevention</option>
+        <option>Not sure yet</option>
+      </select>
+    </div>
+    <div>
+      <label for="urgency">Urgency</label>
+      <select id="urgency" name="urgency">
+        <option value="">Select</option>
+        <option>Today</option>
+        <option>This week</option>
+        <option>Planning ahead</option>
+      </select>
+    </div>
+    <div class="full">
+      <label for="preferred_contact_method">Preferred contact method</label>
+      <select id="preferred_contact_method" name="preferred_contact_method">
+        <option>Call</option>
+        <option>Text</option>
+        <option>Email</option>
+      </select>
+    </div>
+    <div class="full">
+      <label for="message">Tell us what you're seeing</label>
+      <textarea id="message" name="message" placeholder="Mud tubes near foundation, soft baseboards, wings near windows..."></textarea>
+    </div>
+    <div class="full consent">
+      <input id="consent" name="consent" type="checkbox" required />
+      <label for="consent" style="font-size:0.82rem;color:var(--text-dim);">By submitting, I agree Smart Termite Tulsa may contact me by phone, text, or email about my inquiry. Message and data rates may apply. Reply STOP to opt out. I have read the privacy notice below.</label>
+    </div>
+  </div>
+
+  <!-- Hidden context -->
+  <input type="hidden" name="source_page" value="" />
+  <input type="hidden" name="utm_source" value="" />
+  <input type="hidden" name="utm_medium" value="" />
+  <input type="hidden" name="utm_campaign" value="" />
+  <input type="hidden" name="utm_content" value="" />
+  <input type="hidden" name="utm_term" value="" />
+  <input type="hidden" name="lead_type" value="termite-inspection-request" />
+  <input type="hidden" name="service_area" value={serviceArea} />
+  <input type="hidden" name="pipeline_stage" value="New Lead" />
+  <input type="hidden" name="lead_status" value="New" />
+  <input type="hidden" name="crm_workspace" value="smart-termite-tulsa" />
+  <input type="hidden" name="created_at" value="" />
+  <!-- Use EITHER the form action's redirect OR this hidden _next field (Formspree/Basin honor _next) -->
+  <input type="hidden" name="_next" value="/thank-you" />
+
+  <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+    <button type="submit" class="btn btn-primary">Request My Inspection</button>
+    <span class="muted" style="font-size:0.85rem;">We'll follow up within one business day.</span>
+  </div>
+
+  <p class="privacy-note">Your information is used only to follow up on your request. We do not sell or share your details. See our consent language above.</p>
+</form>
+
+<script is:inline>
+  (function () {
+    var forms = document.querySelectorAll('form.lead-form');
+    forms.forEach(function (form) {
+      // Populate hidden fields
+      var params = new URLSearchParams(location.search);
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function (k) {
+        var el = form.querySelector('input[name="' + k + '"]');
+        if (el) el.value = params.get(k) || '';
+      });
+      var sp = form.querySelector('input[name="source_page"]'); if (sp) sp.value = location.pathname;
+      var ca = form.querySelector('input[name="created_at"]'); if (ca) ca.value = new Date().toISOString();
+
+      // Client-side required validation
+      form.addEventListener('submit', function (e) {
+        // honeypot
+        var hp = form.querySelector('input[name="website"]');
+        if (hp && hp.value) { e.preventDefault(); return; }
+        var required = form.querySelectorAll('[required]');
+        var ok = true;
+        required.forEach(function (el) {
+          if (!el.value || (el.type === 'checkbox' && !el.checked)) {
+            ok = false;
+            el.style.borderColor = 'var(--danger)';
+          } else {
+            el.style.borderColor = '';
+          }
+        });
+        if (!ok) { e.preventDefault(); alert('Please complete the required fields.'); }
+      });
+    });
+  })();
+</script>
+

@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+import CTA from '../components/CTA.astro';
+import Schema from '../components/Schema.astro';
+
+const signs = [
+  { name: 'Mud tubes on foundations or crawlspace walls', detail: 'Pencil-thin dirt tunnels running up your foundation are the most reliable visible sign of subterranean termite activity. They protect termites traveling between soil and wood. Even broken or "old-looking" tubes deserve a professional look.' },
+  { name: 'Discarded wings near windows and door frames', detail: 'After a spring swarm, reproductive termites shed identical pairs of translucent wings on windowsills, in spider webs, and in light fixtures. Wing piles are one of the clearest indoor warning signs.' },
+  { name: 'Soft, spongy, or hollow-sounding wood', detail: 'Tap baseboards, door frames, and crawlspace beams with the back of a screwdriver. Termite-damaged wood often sounds hollow, feels papery, or dents under light pressure.' },
+  { name: 'Bubbling, blistering, or peeling paint', detail: 'Termites tunneling just under painted surfaces trap moisture, and paint blisters in irregular patterns. It often looks like minor water damage, which delays the right diagnosis.' },
+  { name: 'Doors or windows that suddenly stick', detail: 'If a door or window that worked fine last year now sticks or rubs, termite damage may have warped the frame. Worth a closer look.' },
+  { name: 'Tiny piles of wood-colored pellets (frass)', detail: 'Drywood termites push out small, ridged fecal pellets that look like coffee grounds or coarse sawdust. Pellets accumulating near a windowsill or under a piece of trim deserve attention.' },
+  { name: 'Swarmers near interior windows in spring', detail: 'In Oklahoma, swarms typically appear March through May. Winged termites bumping against indoor windows usually means an active colony is established nearby.' },
+  { name: 'Moisture or wood-soil contact near crawlspaces', detail: 'Standing water in a crawlspace, soaked subfloor insulation, or wood siding touching dirt are five-alarm conditions. Termites do not need much encouragement.' },
+  { name: 'Damaged or crumbling baseboards and trim', detail: 'Baseboards that flake, dent under a fingernail, or show vertical cracks may already contain active galleries. Damage on the inside is usually much worse than what shows outside.' },
+  { name: 'Previous termite history in the home or neighborhood', detail: 'If your home or a neighbor\'s home has had termites before, your risk is elevated permanently. Annual inspections are especially important in these cases.' },
+];
+---
+<BaseLayout
+  title="Tulsa Termite Warning Signs | What to Look For in Your Home"
+  description="The 10 most common termite warning signs in Tulsa-area homes — explained in plain English, with what to do next if you spot one."
+>
+  <Schema type="Article" name="Tulsa Termite Warning Signs" description="The 10 most common termite warning signs Tulsa homeowners should know." breadcrumbs={[{name:'Home',path:'/'},{name:'Warning Signs',path:'/tulsa-termite-warning-signs'}]} />
+
+  <section class="hero">
+    <div class="container">
+      <h1>Tulsa Termite Warning Signs</h1>
+      <p class="sub">The 10 most common red flags in Tulsa-area homes, explained without scare tactics. Walk through your home and check for these — they're the same signs a professional looks for first.</p>
+      <a href="/termite-warning-signs-checklist" class="btn btn-primary" data-event="cta_click" data-lead-type="checklist_download">Get the Printable Checklist</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="quick-answer"><strong>Quick Answer</strong>The most common termite warning signs are mud tubes on the foundation, discarded wings near windows, hollow-sounding wood, blistering paint, sticking doors, frass pellets, springtime indoor swarmers, damp crawlspaces, crumbling baseboards, and any prior termite history. Any one of these signs is worth a professional inspection.</div>
+
+      <div class="aeo-block"><h3>What it means</h3><p>Termite damage is rarely sudden. By the time you can see signs, a colony has usually been working in your home for months or years. Catching even one of these signs early is what separates a manageable inspection from a major repair bill.</p></div>
+      <div class="aeo-block"><h3>When to call a professional</h3><p>Call if you see any one of the signs below — especially mud tubes, indoor swarmers, or frass pellets. Do not disturb the area; termites scatter and become harder to locate.</p></div>
+      <div class="aeo-block"><h3>What to do next</h3><p>Use the form below to request an inspection. Photograph anything you find before you call.</p></div>
+      <div class="aeo-block"><h3>Related questions</h3><ul><li><a href="/termite-inspection-tulsa">What's included in an inspection?</a></li><li><a href="/termite-treatment-options">What treatment options exist?</a></li><li><a href="/termite-prevention-guide">How can I prevent termites?</a></li></ul></div>
+
+      <h2 style="margin-top:36px;">The 10 warning signs in detail</h2>
+      {signs.map((s, i) => (
+        <div style="margin-bottom:22px;">
+          <h3>{i+1}. {s.name}</h3>
+          <p>{s.detail}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section><div class="container"><LeadForm heading="Saw Something? Request an Inspection" /></div></section>
+  <CTA />
+</BaseLayout>

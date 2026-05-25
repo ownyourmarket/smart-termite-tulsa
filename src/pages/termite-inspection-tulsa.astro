@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+import CTA from '../components/CTA.astro';
+import Schema from '../components/Schema.astro';
+
+const faqs = [
+  { q: 'How long does a termite inspection take?', a: 'A thorough inspection of an average Tulsa home typically takes 45 to 90 minutes, depending on size, accessibility of the crawlspace or basement, and the amount of stored items in the garage and attic.' },
+  { q: 'What does the inspector actually look at?', a: 'Inspectors check the foundation perimeter, crawlspace or basement, accessible attic areas, baseboards, door and window frames, plumbing penetrations, and any wood-to-soil contact around the property.' },
+];
+---
+<BaseLayout
+  title="Termite Inspection in Tulsa, OK | Smart Termite Tulsa"
+  description="Request a professional termite inspection in Tulsa, Broken Arrow, Jenks, Bixby, and across the Tulsa metro. Plain-English answers, no pressure, no scare tactics."
+>
+  <Schema type="Service" serviceName="Termite Inspection" name="Termite Inspection in Tulsa, OK" description="Professional termite inspection requests across the Tulsa metro." breadcrumbs={[{name:'Home',path:'/'},{name:'Termite Inspection',path:'/termite-inspection-tulsa'}]} faqs={faqs} />
+
+  <section class="hero">
+    <div class="container">
+      <h1>Termite Inspection in Tulsa, OK</h1>
+      <p class="sub">Request a professional walk-through of your home. We help Tulsa-area homeowners connect with experienced termite inspectors and understand exactly what they're seeing.</p>
+      <a href="#form" class="btn btn-primary" data-event="cta_click" data-lead-type="request_inspection">Request My Inspection</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="quick-answer"><strong>Quick Answer</strong>A termite inspection is a 45-to-90-minute professional examination of your home's foundation, crawlspace, woodwork, and risk areas. It is the only reliable way to confirm whether termite activity is present.</div>
+
+      <div class="aeo-block"><h3>What it means</h3><p>A termite inspection is not a treatment. It is a careful visual examination performed by a licensed professional who knows where termites hide and what early activity looks like. You'll receive a written summary of conditions found, areas of concern, and recommended next steps.</p></div>
+
+      <div class="aeo-block"><h3>When to call a professional</h3><p>Call right away if you see mud tubes, swarmers indoors, discarded wings, hollow-sounding wood, or sudden door sticking. Even without these signs, every Tulsa home benefits from an annual inspection — most termite damage is invisible until a professional knows where to look.</p></div>
+
+      <div class="aeo-block"><h3>What to do next</h3><p>Use the form below to request an inspection. Tell us what you're seeing and where in your home. We follow up within one business day to help you understand your options and connect you with a local professional.</p></div>
+
+      <div class="aeo-block"><h3>Related questions</h3><ul><li><a href="/termite-treatment-options">What termite treatment options exist?</a></li><li><a href="/termite-prevention-guide">How can I prevent termites long-term?</a></li><li><a href="/tulsa-termite-warning-signs">What are the warning signs of termites?</a></li></ul></div>
+
+      <h2 style="margin-top:48px;">What's included in a professional termite inspection</h2>
+      <p>A proper termite inspection covers the full perimeter of your home, all accessible interior wood surfaces, the attic (when safe to enter), crawlspaces and basements, garage walls, and any outbuildings on the property. The inspector is looking for both active termites and the conditions that invite them.</p>
+      <p>Expect the inspector to use a flashlight, moisture meter, and a small probe or screwdriver to test suspect wood. They will photograph areas of concern and walk you through what they found before they leave. A written report typically follows within 24 to 48 hours.</p>
+      <p>For Tulsa-metro homes, special attention is usually paid to the foundation perimeter (where subterranean termites enter), the crawlspace (where moisture and wood-to-soil contact create high-risk conditions), bath traps and plumbing penetrations (a frequent entry point), and exterior wood trim within six inches of the soil.</p>
+
+      <h2 style="margin-top:36px;">How often should Tulsa homes be inspected?</h2>
+      <p>At least once a year. Subterranean termites can establish a colony and cause meaningful structural damage in 18 to 36 months — well within an annual inspection cycle. Homes with a previous termite history, wood siding, or active moisture issues may benefit from twice-yearly checks.</p>
+
+      <h2 style="margin-top:36px;">Service areas for termite inspection requests</h2>
+      <p>We help homeowners across Tulsa, Broken Arrow, Jenks, Bixby, Owasso, Sand Springs, Sapulpa, Glenpool, Claremore, and Catoosa. <a href="/service-areas">See all service areas &rarr;</a></p>
+    </div>
+  </section>
+
+  <section id="form">
+    <div class="container">
+      <LeadForm heading="Request Your Termite Inspection" />
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>
