@@ -1,11 +1,24 @@
 ---
 const { items = [] } = Astro.props;
 ---
-<div class="faq">
+<div class="faq-list">
   {items.map((q) => (
     <details class="faq-item">
-      <summary data-event="faq_open" data-page={Astro.url.pathname}>{q.q}</summary>
+      <summary data-event="faq_open" data-page={Astro.url.pathname}>
+        {q.q}
+        <span class="faq-icon">+</span>
+      </summary>
       <div class="answer" set:html={q.a} />
     </details>
   ))}
 </div>
+<script is:inline>
+  (function () {
+    document.querySelectorAll('.faq-item').forEach(function (el) {
+      el.addEventListener('toggle', function () {
+        var icon = el.querySelector('.faq-icon');
+        if (icon) icon.textContent = el.open ? '−' : '+';
+      });
+    });
+  })();
+</script>

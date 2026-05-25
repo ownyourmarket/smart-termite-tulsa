@@ -14,11 +14,15 @@ const areas = [
 ---
 <section>
   <div class="container">
-    <h2>Tulsa-Metro Service Areas</h2>
-    <p class="muted" style="max-width:680px;">We help homeowners across the Tulsa metro request termite inspections and understand what they're seeing.</p>
-    <div class="area-grid mt-lg">
+    <div class="section-header">
+      <span class="eyebrow">Where We Serve</span>
+      <h2>Tulsa-Metro Service Areas</h2>
+      <p>We help homeowners across the Tulsa metro request termite inspections and understand what they're seeing.</p>
+    </div>
+    <div class="area-grid">
       {areas.map(a => (
         <a href="/service-areas" class="area" data-event="area_click" data-service-area={a.name}>
+          <span class="area-tag">Tulsa Metro</span>
           <h3>{a.name}</h3>
           <p>{a.blurb}</p>
         </a>

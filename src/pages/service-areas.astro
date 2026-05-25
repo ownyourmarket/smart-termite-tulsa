@@ -32,7 +32,10 @@ const areas = [
 
   <section>
     <div class="container">
-      <div class="quick-answer"><strong>Quick Answer</strong>Smart Termite Tulsa helps homeowners in Tulsa, Broken Arrow, Jenks, Bixby, Owasso, Sand Springs, Sapulpa, Glenpool, Claremore, and Catoosa connect with professional termite inspections and education.</div>
+      <div class="quick-answer">
+        <div class="qa-label">Quick Answer</div>
+        <p>Smart Termite Tulsa helps homeowners in Tulsa, Broken Arrow, Jenks, Bixby, Owasso, Sand Springs, Sapulpa, Glenpool, Claremore, and Catoosa connect with professional termite inspections and education.</p>
+      </div>
 
       {areas.map(a => (
         <div style="margin-bottom:34px;">
@@ -44,6 +47,6 @@ const areas = [
     </div>
   </section>
 
-  <section><div class="container"><LeadForm heading="Request an Inspection in Your Area" /></div></section>
+  <section><div class="container"><div class="lead-form-wrap"><LeadForm heading="Request an Inspection in Your Area" /></div></div></section>
   <CTA />
 </BaseLayout>

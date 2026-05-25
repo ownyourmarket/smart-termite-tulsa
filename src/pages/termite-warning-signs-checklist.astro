@@ -33,7 +33,10 @@ const signs = [
 
   <section>
     <div class="container">
-      <div class="quick-answer"><strong>Quick Answer</strong>Walk through your home checking for these 10 termite warning signs. If you find one or more, request a professional inspection — do not disturb the area first.</div>
+      <div class="quick-answer">
+        <div class="qa-label">Quick Answer</div>
+        <p>Walk through your home checking for these 10 termite warning signs. If you find one or more, request a professional inspection — do not disturb the area first.</p>
+      </div>
 
       <h2>The 10-Item Termite Warning Signs Checklist</h2>
       <ul class="clean">
@@ -47,6 +50,6 @@ const signs = [
     </div>
   </section>
 
-  <section><div class="container"><LeadForm compact={true} heading="Email Me a Copy & Request Inspection Help" sub="We'll follow up with next steps based on what you found." /></div></section>
+  <section><div class="container"><div class="lead-form-wrap"><LeadForm compact={true} heading="Email Me a Copy & Request Inspection Help" sub="We'll follow up with next steps based on what you found." /></div></div></section>
   <CTA heading="Found something on the list?" sub="Request a professional inspection — fast follow-up, plain-English next steps." />
 </BaseLayout>

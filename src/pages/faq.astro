@@ -48,10 +48,13 @@ const faqs = [
 
   <section>
     <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">All Questions</span>
+      </div>
       <FAQAccordion items={faqs} />
     </div>
   </section>
 
-  <section><div class="container"><LeadForm heading="Still have a question? Ask us." sub="Tell us what you're trying to figure out. We'll help." /></div></section>
+  <section><div class="container"><div class="lead-form-wrap"><LeadForm heading="Still have a question? Ask us." sub="Tell us what you're trying to figure out. We'll help." /></div></div></section>
   <CTA />
 </BaseLayout>

@@ -42,40 +42,50 @@ const faqs = [
   <section>
     <div class="container">
       <div class="quick-answer">
-        <strong>Quick Answer</strong>
-        How do I know if my Tulsa home may have termites? Look for mud tubes on the foundation, discarded wings near windows, hollow-sounding wood, or springtime swarmers inside the house. Any of these signs is worth a professional inspection — they rarely appear without active termite pressure somewhere on the property.
+        <div class="qa-label">Quick Answer</div>
+        <p>How do I know if my Tulsa home may have termites? Look for mud tubes on the foundation, discarded wings near windows, hollow-sounding wood, or springtime swarmers inside the house. Any of these signs is worth a professional inspection — they rarely appear without active termite pressure somewhere on the property.</p>
       </div>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <h2>10 Termite Warning Signs Tulsa Homeowners Should Know</h2>
-      <p class="muted" style="max-width:720px;">Most termite damage is slow, hidden, and easy to miss until repair costs add up. Walk through your home with this list and request an inspection if anything looks familiar.</p>
-      <div class="cards mt-lg">
+      <div class="section-header">
+        <span class="eyebrow">Warning Signs</span>
+        <h2>10 Termite Warning Signs Tulsa Homeowners Should Know</h2>
+        <p>Most termite damage is slow, hidden, and easy to miss until repair costs add up. Walk through your home with this list and request an inspection if anything looks familiar.</p>
+      </div>
+      <div class="signs-grid">
         {warningSigns.map((s, i) => (
-          <div class="card">
-            <div class="icon">{String(i + 1).padStart(2, '0')}</div>
-            <h3>{s.name}</h3>
-            <p>{s.detail}</p>
+          <div class="sign-item">
+            <div class="sign-num">{i + 1}</div>
+            <div class="sign-body">
+              <h3>{s.name}</h3>
+              <p>{s.detail}</p>
+            </div>
           </div>
         ))}
       </div>
-      <div style="margin-top:28px;">
-        <a href="/tulsa-termite-warning-signs" class="btn btn-secondary" data-event="cta_click" data-lead-type="warning_signs">Full Warning Signs Guide</a>
+      <div class="mt-md">
+        <a href="/tulsa-termite-warning-signs" class="btn btn-outline" data-event="cta_click" data-lead-type="warning_signs">Full Warning Signs Guide</a>
       </div>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <LeadForm />
+      <div class="lead-form-wrap">
+        <LeadForm />
+      </div>
     </div>
   </section>
 
-  <section>
+  <section class="section-cream">
     <div class="container">
-      <h2>Why Tulsa Homes Are a Termite-Risk Area</h2>
+      <div class="section-header">
+        <span class="eyebrow">Local Context</span>
+        <h2>Why Tulsa Homes Are a Termite-Risk Area</h2>
+      </div>
       <p>Eastern Oklahoma sits squarely inside the active range of the eastern subterranean termite, the most economically destructive wood-eating insect in North America. Tulsa's climate, soil, and housing stock combine to create one of the more challenging termite environments in the state.</p>
       <p>The Tulsa metro is built on a mix of expansive clay soils and river-bottom sediments. Clay soils hold moisture longer than sandy soils, and they shift seasonally — opening hairline cracks in slabs and foundations that termites use as entry points. Many homes in older Tulsa neighborhoods (Brookside, Maple Ridge, Riverview, and parts of midtown) sit on pier-and-beam or partial basement foundations with crawlspaces that stay slightly damp year-round.</p>
       <p>Local swarm season typically runs from March through May, often kicked off by the first warm rain after a stretch of cool weather. Homeowners in Tulsa, Broken Arrow, Jenks, and Bixby commonly see swarmers at indoor windows during this period. By the time swarmers appear inside, an established colony has usually been present nearby for several years.</p>
@@ -88,9 +98,12 @@ const faqs = [
 
   <section>
     <div class="container">
-      <h2>Common Termite Treatment Approaches</h2>
-      <p class="muted" style="max-width:720px;">Treatment is a decision best made after a professional inspection. These are the approaches a licensed termite professional may discuss with you — the right fit depends on your home, your soil, and the type and extent of activity present.</p>
-      <div class="cards mt-lg">
+      <div class="section-header">
+        <span class="eyebrow">Treatment Options</span>
+        <h2>Common Termite Treatment Approaches</h2>
+        <p>Treatment is a decision best made after a professional inspection. These are the approaches a licensed termite professional may discuss with you — the right fit depends on your home, your soil, and the type and extent of activity present.</p>
+      </div>
+      <div class="cards">
         <div class="card"><h3>Liquid Soil Treatment (Termiticide Barrier)</h3><p>A continuous treated zone is established in the soil around and under the foundation. Termites passing through the zone carry the active ingredient back to the colony.</p></div>
         <div class="card"><h3>Bait Station Systems</h3><p>In-ground stations placed around the home contain wood or cellulose monitors. Once activity is detected, the monitor is replaced with bait designed to eliminate the colony.</p></div>
         <div class="card"><h3>Direct Wood Treatments</h3><p>Borate or foam treatments applied to exposed wood inside walls or crawlspaces can stop active galleries and add a layer of long-term protection.</p></div>
@@ -98,7 +111,7 @@ const faqs = [
         <div class="card"><h3>New-Construction Pre-Treatment</h3><p>Treating soil before the slab is poured is a one-time opportunity to build long-term protection into the home from day one.</p></div>
         <div class="card"><h3>Annual Re-Inspection</h3><p>Whatever treatment path you choose, an annual inspection is the single most important step for catching new activity early.</p></div>
       </div>
-      <p class="muted" style="font-size:0.88rem;margin-top:18px;">Every home is different. A licensed termite professional can evaluate which approach (or combination) may be appropriate for your situation.</p>
+      <p class="muted mt-sm" style="font-size:0.88rem;">Every home is different. A licensed termite professional can evaluate which approach (or combination) may be appropriate for your situation.</p>
     </div>
   </section>
 
@@ -108,9 +121,12 @@ const faqs = [
 
   <section>
     <div class="container">
-      <h2>Frequently Asked Questions</h2>
+      <div class="section-header">
+        <span class="eyebrow">Common Questions</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
       <FAQAccordion items={faqs} />
-      <p style="margin-top:18px;"><a href="/faq">See all 25 termite FAQs &rarr;</a></p>
+      <p class="mt-sm"><a href="/faq">See all 25 termite FAQs &rarr;</a></p>
     </div>
   </section>
 
